@@ -1,4 +1,4 @@
-<?php get_view('admin/header') ?>
+<?php get_view('components/header') ?>
 
 <style>
     /* =========================================
@@ -690,4 +690,4 @@
     </div>
 </div>
 
-<?php get_view('admin/footer') ?>
+<?php get_view('components/footer') ?>

@@ -1,7 +1,6 @@
-<?php get_view('admin/header') ?>
+<?php get_view('components/header') ?>
 
 <style>
-    /* Stats Grid */
     .stats-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -15,13 +14,9 @@
         border-radius: 16px;
         border: 1px solid #e2e8f0;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-
-        /* Chuyển sang Flexbox */
         display: flex;
         align-items: center;
-        /* Căn giữa theo chiều dọc */
         gap: 20px;
-        /* Khoảng cách giữa icon và chữ */
     }
 
     .card-icon {
@@ -33,7 +28,6 @@
         justify-content: center;
         font-size: 24px;
         flex-shrink: 0;
-        /* Không cho icon bị co lại */
     }
 
     .card-content {
@@ -244,4 +238,4 @@
     </div>
 </div>
 
-<?php get_view('admin/footer') ?>
+<?php get_view('components/footer') ?>

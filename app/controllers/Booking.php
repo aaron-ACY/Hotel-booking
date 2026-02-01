@@ -2,6 +2,6 @@
 
 class Booking extends Controller {
     public function index() {
-        $this->view('booking');
+        $this->view('booking/booking');
     }
 }

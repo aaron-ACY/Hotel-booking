@@ -26,17 +26,14 @@ class Admin extends Controller
     ";
 
         $data['rows'] = $this->query($query);
-        $this->view('admin/dashboard', $data);
+        $this->view('dashboard/dashboard', $data);
     }
 
     public function delete($id = null)
     {
         if ($id) {
-            // Xóa các bảng phụ có khóa ngoại trỏ tới booking_id trước
             $this->query("DELETE FROM booking_room WHERE booking_id = :id", ['id' => $id]);
             $this->query("DELETE FROM booking_addon WHERE booking_id = :id", ['id' => $id]);
-
-            // Cuối cùng mới xóa bảng chính
             $query = "DELETE FROM booking WHERE id = :id LIMIT 1";
             $this->query($query, ['id' => $id]);
         }
