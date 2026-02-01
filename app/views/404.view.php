@@ -1,32 +1,82 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Trang không tìm thấy - 404</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Error 404</title>
+
     <style>
-        body {
-            margin: 0; padding: 0; font-family: sans-serif;
-            display: flex; justify-content: center; align-items: center;
-            height: 100vh; background: #f9f9f9; text-align: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "poppins";
         }
-        .circle {
-            width: 250px; height: 250px; background: #1a2a44;
-            border-radius: 50%; margin: 20px auto;
-            display: flex; align-items: center; justify-content: center;
+
+        .page_404 {
+            padding: 40px 0;
+            background: #fff;
+            font-family: 'Poppins';
         }
-        .circle img { width: 70%; }
-        h2 { color: #333; margin: 10px 0; }
-        a { color: #3498db; text-decoration: none; }
+
+        .page_404 img {
+            width: 100%;
+        }
+
+        .four_zero_four_bg {
+            background: url('/hotel-booking/public/assets/img/bg.gif');
+            height: 400px;
+            background-position: center;
+        }
+
+        h1 {
+            font-size: 80px;
+        }
+
+        h3 {
+            font-size: 80px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: #39ac31;
+            display: inline-block;
+        }
+
+        .content_box_404 {
+            margin-top: -50px;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
     </style>
 </head>
+
 <body>
-    <div>
-        <h2>Aww.. don't be sad</h2>
-        <div class="circle">
-            <img src="https://cdn-icons-png.flaticon.com/512/2585/2585141.png" alt="404 Bear">
+    <section class="page_404">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-sm-10 col-sm-offset-1 text-center">
+                        <div class="four_zero_four_bg">
+                            <h1 class="text-center">404</h1>
+                        </div>
+                        <div class="content_box_404">
+                            <h3 class="h2">Looks Like You're Lost</h3>
+                            <p>The page you are looking for not available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h2>404 page not found</h2>
-        <p><a href="<?=ROOT?>">back to <u>home</u></a></p>
-    </div>
+    </section>
 </body>
+
 </html>
