@@ -138,6 +138,8 @@
     .action-btns {
         display: flex;
         gap: 12px;
+        justify-content: center;
+        align-items: center;
     }
 
     .btn-icon {
@@ -221,13 +223,31 @@
                                 </span>
                             </td>
                             <td>
-                                <div class="action-btns">
-                                    <a href="<?= ROOT ?>/admin/edit/<?= $row->id ?>" style="color: #3b82f6;"><i class="fa-regular fa-pen-to-square"></i></a>
-                                    <a href="<?= ROOT ?>/admin/delete/<?= $row->id ?>"
-                                        onclick="return confirm('Bạn có chắc chắn muốn xóa?')"
-                                        style="color: #ef4444;">
-                                        <i class="fa-regular fa-trash-can"></i>
-                                    </a>
+                                <div class="action-btns" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+
+                                    <?php if ($row->status == 'pending'): ?>
+                                        <a href="<?= ROOT ?>/booking/checkin/<?= $row->id ?>"
+                                            class="btn-icon"
+                                            style="color: #22c55e; font-size: 18px;"
+                                            title="Check-in">
+                                            <i class="fa-solid fa-check-to-slot"></i>
+                                        </a>
+
+                                    <?php elseif ($row->status == 'checked_in'): ?>
+                                        <a href="<?= ROOT ?>/payment/checkout/<?= $row->id ?>"
+                                            onclick="return confirm('Xác nhận thanh toán VNPay và trả phòng?')"
+                                            class="btn-icon"
+                                            style="color: #f59e0b; font-size: 18px;"
+                                            title="Thanh toán & Trả phòng">
+                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                        </a>
+
+                                    <?php else: ?>
+                                        <span style="color: #94a3b8; font-size: 18px;">
+                                            <i class="fa-solid fa-circle-check"></i>
+                                        </span>
+                                    <?php endif; ?>
+
                                 </div>
                             </td>
                         </tr>

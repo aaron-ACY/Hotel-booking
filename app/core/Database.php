@@ -1,6 +1,6 @@
 <?php
 
-Trait Database
+trait Database
 {
     private function connect()
     {
@@ -16,10 +16,17 @@ Trait Database
 
         $check = $stm->execute($data);
         if ($check) {
-            $result = $stm->fetchAll(PDO::FETCH_OBJ);
-            if (is_array($result) && count($result)) {
-                return $result;
+            // Nếu là câu lệnh SELECT -> Trả về dữ liệu
+            if (stripos(trim($query), 'SELECT') === 0) {
+                $result = $stm->fetchAll(PDO::FETCH_OBJ);
+                if (is_array($result) && count($result)) {
+                    return $result;
+                }
+                return []; // Trả về mảng rỗng nếu không có dữ liệu (thay vì false để tránh lỗi foreach)
             }
+
+            // Nếu là INSERT/UPDATE/DELETE -> Trả về true
+            return true;
         }
 
         return false;

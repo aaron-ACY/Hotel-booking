@@ -27,7 +27,7 @@
         }
 
         .four_zero_four_bg {
-            background: url('/hotel-booking/public/assets/img/bg.gif');
+            background: url('/hotel-booking/public/assets/img/error-page.gif');
             height: 400px;
             background-position: center;
         }

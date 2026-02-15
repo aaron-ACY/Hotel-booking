@@ -1,8 +1,9 @@
 RewriteEngine On
 
-# Kiểm tra nếu yêu cầu không phải là thư mục thực tế
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Chuyển hướng tất cả về file index.php
 RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
